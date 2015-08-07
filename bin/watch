@@ -12,5 +12,23 @@ styles() {
   nodemon --watch src/styles/*.less --ext less --exec 'npm run less'
 }
 
+# watch jade files
+html() {
+  jade --watch --out dist/ src/index.jade
+}
+
+# livereload
+livereload() {
+  livereload dist/
+}
+
 javascript &
+pid[0]=$!
 styles &
+pid[1]=$!
+html &
+pid[2]=$!
+livereload &
+pid[3]=$!
+trap "kill ${pid[0]} ${pid[1]} ${pid[2]} ${pid[3]}; exit 1" INT
+wait

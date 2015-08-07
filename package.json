@@ -8,6 +8,7 @@
     "build": "./bin/build",
     "clean": "./bin/clean",
     "init": "./bin/init",
+    "jade": "./bin/jade",
     "less": "./bin/less",
     "lint": "./bin/lint",
     "start": "./bin/watch",
@@ -41,6 +42,7 @@
     "jquery": "^2.1.4",
     "less": "^2.5.1",
     "less-plugin-clean-css": "^1.5.1",
+    "livereload": "^0.3.7",
     "nodemon": "^1.4.0"
   }
 }
