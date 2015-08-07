@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/eliias/hannes-moser/issues"
   },
-  "homepage": "https://github.com/eliias/hannes-moser#readme"
+  "homepage": "https://github.com/eliias/hannes-moser#readme",
+  "dependencies": {
+    "babel": "^5.8.21",
+    "page": "^1.6.3"
+  }
 }

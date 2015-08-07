@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# author: Hannes Moser <hannes@impossiblearts.com>
+#
+
+# lint src
+eslint -c .eslintrc ./src

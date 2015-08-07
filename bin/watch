@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# author: Hannes Moser <hannes@impossiblearts.com>
+#
+
+# compile to JavaScript
+babel --optional runtime -L -e 1 -w -d ./dist ./src

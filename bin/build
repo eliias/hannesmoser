@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# author: Hannes Moser <hannes@impossiblearts.com>
+#
+
+# compile to JavaScript
+npm run clean &&
+npm run init &&
+npm run lint &&
+babel --optional runtime -L -e 1 -d ./dist ./src
