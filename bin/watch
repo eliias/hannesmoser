@@ -2,5 +2,15 @@
 # author: Hannes Moser <hannes@impossiblearts.com>
 #
 
-# compile to JavaScript
-babel --optional runtime -L -e 1 -w -d ./dist ./src
+# watch JavaScript files
+javascript() {
+  babel --optional runtime -L -e 1 -w -d ./dist ./src
+}
+
+# watch style files
+styles() {
+  nodemon --watch src/styles/*.less --ext less --exec 'npm run less'
+}
+
+javascript &
+styles &

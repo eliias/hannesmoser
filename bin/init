@@ -3,5 +3,5 @@
 #
 
 # init
-mkdir -p ./dist
+mkdir -p ./dist/{images,scripts,styles}
 
