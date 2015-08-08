@@ -4,4 +4,3 @@
 
 # compile css
 lessc --clean-css="--compatibility=ie10 --advanced" ./src/styles/main.less ./dist/styles/main.css
-
