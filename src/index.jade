@@ -1,9 +1,20 @@
 doctype html
 html(lang="en")
   head
+    meta(name="viewport", content="width=device-width")
+
     title Hannes Moser
+
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/styles/main.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto")
   body
-    h1 Portfolio
+    img(src="avatar-body.png")
+    h1 Hannes Moser
+    ul
+      li: a(href="https://github.com/eliias") GitHub
+      li: a(href="https://twitter.com/eliias") Twitter
+      li: a(href="http://die.netzarchitekten.com") Die Netzarchitekten
     script(src="scripts/main.js")
   script.
     document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')

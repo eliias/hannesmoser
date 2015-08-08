@@ -6,5 +6,6 @@
 npm run clean &&
 npm run init &&
 npm run lint &&
+npm run jade &&
 npm run less &&
 babel --optional runtime -L -e 1 -d ./dist ./src

@@ -1,6 +1,9 @@
 # IDE
 .idea
 
+# pid
+*.pid
+
 # logs
 logs
 *.log

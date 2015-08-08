@@ -3,4 +3,4 @@
 #
 
 # clean lib
-rm -rf ./lib
+rm -rf ./dist
