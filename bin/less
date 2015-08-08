@@ -3,4 +3,4 @@
 #
 
 # compile css
-lessc --clean-css="--compatibility=ie10 --advanced" ./src/styles/main.less ./dist/styles/main.css
+lessc --autoprefix="last 2 versions" --clean-css="--compatibility=ie10 --advanced" ./src/styles/main.less ./dist/styles/main.css

@@ -9,14 +9,14 @@ html(lang="en")
     link(rel="stylesheet", href="styles/main.css")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto")
   body
-    img(src="images/avatar-body.png")
-    br
-    h1 Hannes Moser
-    br
-    ul
-      li: a(href="https://github.com/eliias") GitHub
-      li: a(href="https://twitter.com/eliias") Twitter
-      li: a(href="http://die.netzarchitekten.com") Die Netzarchitekten
+    .container
+      .col-sm-12.text-center
+        img(src="images/avatar-body.png")
+        h1 Hannes Moser
+        ul.text-center
+          li: a(href="https://github.com/eliias") GitHub
+          li: a(href="https://twitter.com/eliias") Twitter
+          li: a(href="http://die.netzarchitekten.com") Die Netzarchitekten
     script(src="scripts/main.js")
   script.
     document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')

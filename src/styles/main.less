@@ -4,24 +4,25 @@ html {
 
 body {
   min-height: 100%;
-  display: -webkit-flex;
+
   display: flex;
-  text-align: center;
-  -webkit-align-items: center;
   align-items: center;
-  -webkit-justify-content: center;
   justify-content: center;
+
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
 
+section {
+  display: block;
+}
+
 ul {
   padding: 0;
+  list-style-type: none;
 
   li {
+    display: inline;
     padding: 0 1em;
-    float: left;
-    list-style-type: none;
-    text-align: center;
   }
 }
