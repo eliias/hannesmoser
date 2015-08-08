@@ -3,4 +3,4 @@
 #
 
 # copy images
-cp -R ./src/images/ ./dist/images/
+cp -R ./src/images/* ./dist/images/
