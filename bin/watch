@@ -4,7 +4,7 @@
 
 # watch JavaScript files
 javascript() {
-  babel --optional runtime -L -e 1 -w -d ./dist ./src
+  watchify -d -e ./src/scripts/main.js -t babelify --outfile ./dist/scripts/main.js
 }
 
 # watch style files
