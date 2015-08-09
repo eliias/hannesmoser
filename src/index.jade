@@ -5,19 +5,171 @@ html(lang="en")
 
     title Hannes Moser
 
-    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
     link(rel="stylesheet", href="styles/main.css")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto")
   body
     .container
-      .row
-        .col-sm-12.text-center
-          img(src="images/avatar-body.png")
-          h1 Hannes Moser
-          ul
-            li: a(href="https://github.com/eliias") GitHub
-            li: a(href="https://twitter.com/eliias") Twitter
-            li: a(href="http://die.netzarchitekten.com") Die Netzarchitekten
+      header
+        .row
+          .col-md-6.col-md-offset-3.col-sm-12.col-sm-offset-0.text-center
+            .page-header
+              img(src="images/avatar-body.png")
+              h1 Hannes Moser
+              p.small.lead.text-justify.
+                I am a software developer with a slight faible for web services
+                and API design. The last 13 years, I have worked on browser games,
+                scalable websites, APIs and web applications.
+              p.small.lead.text-justify.
+                I also lecture at
+                the department of „Web-Engineering“ at the University of Applied
+                Sciences Salzburg and have a lovely but crazy dog named Gismo.
+              ul
+                li: a(href="https://github.com/eliias") GitHub
+                li: a(href="https://twitter.com/eliias") Twitter
+                li: a(href="https://at.linkedin.com/in/moserhannes") LinkedIn
+                li: a(href="http://die.netzarchitekten.com") Die Netzarchitekten
+      section
+        .row
+          .col-sm-6.col-sm-offset-3
+            h2 Vita
+            ul.list-unstyled
+              li
+                p
+                  | 2014 – now: MultiMediaTechnology – Senior Lecturer
+                  br
+                  a(href="https://multimediatechnology.at/") MMT Blog & Website
+              li
+                p
+                  | 2013 – 2015: cnuddl – Social Petsitting
+                  br
+                  a(href="https://cnuddl.com/") cnuddl
+              li
+                p
+                  | 2013 – now: Die Netzarchitekten
+                  br
+                  a(href="http://die.netzarchitekten.com/") Die Netzarchitekten
+              li
+                p
+                  | 2012 – 2014: MultiMediaTechnology – External Lecturer
+                  br
+                  a(href="http://www.fh-salzburg.ac.at/") University Of Applied Sciences Salzburg
+              li
+                p
+                  | 2011 – 2013: Fredminds-BD GmbH & Co KG
+                  br
+                  | 2009 – 2011: RC-Eins GmbH
+              li
+                p
+                  | 2005 – 2010: MultiMediaArt, 3D Animation and VFX (Study)
+                  br
+                  a(href="http://www.fh-salzburg.ac.at/") University Of Applied Sciences Salzburg
+        section
+          .row
+            .col-sm-6.col-sm-offset-3
+              h2 Projects
+              ul.list-unstyled
+                li
+                  p.
+                    Silver – Interactive Realtime Fluids for XBox 360
+                li
+                  p
+                    | netiam – A pure REST library for Node.js/io.js
+                    br
+                    a(href="https://neti.am/") netiam
+                li
+                  p
+                    | concat – The webdevelopment conference in Austria
+                    br
+                    a(href="https://conc.at/") concat
+                li
+                  p
+                    | Ace of Mace – Game
+                    br
+                    a(href="https://aceofmace.com/") Ace of Mace
+        section
+          .row
+            .col-sm-6.col-sm-offset-3
+              h2 Talks
+              ul.list-unstyled
+                li
+                  p
+                    | OTSConf 2015
+                    br
+                    a(href="https://otsconf.com/") OpenTechSchool Conference
+        section
+          .row
+            .col-sm-6.col-sm-offset-3
+              h2 Volunteering & Participation
+              ul.list-unstyled
+                li
+                  p
+                    | Barcamp Salzburg – the next web
+                    br
+                    a(href="https://barcamp-sbg.at/") Barcamp Salzburg
+                li
+                  p
+                    | Meetup: Salzburg Webdev
+                    br
+                    a(href="http://www.meetup.com/salzburgwebdev/") Salzburg Webdev Meetup
+                li
+                  p
+                    | Trivago Hackathon
+                    br
+                    a(href="http://www.trivago.com/hackathon2015") Hackathon 2015
+                    br
+                    a(href="https://github.com/zoepage/just-relax") just-relax
+                li
+                  p
+                    | ESA App Camp
+                    br
+                    a(href="http://www.app-camp.eu/") ESA Space App Camp
+        section
+          .row
+            .col-sm-6.col-sm-offset-3
+              h2 Interests
+              span.label.label-primary API
+              | &nbsp;
+              span.label.label-primary REST
+              | &nbsp;
+              span.label.label-primary Web Standards
+              | &nbsp;
+              span.label.label-primary JavaScript
+              | &nbsp;
+              span.label.label-primary ES 2015
+              | &nbsp;
+              span.label.label-primary Node.js
+              br
+              span.label.label-primary io.js
+              | &nbsp;
+              span.label.label-primary TDD
+              | &nbsp;
+              span.label.label-primary Automation
+              | &nbsp;
+              span.label.label-primary UX
+              | &nbsp;
+              span.label.label-primary UI
+              | &nbsp;
+              span.label.label-primary SOA
+              | &nbsp;
+              span.label.label-primary SaaS
+              | &nbsp;
+        section
+          .row
+            .col-sm-6.col-sm-offset-3
+              h3 Contact
+              address
+                strong Die Netzarchitekten
+                br
+                | Jakob-Haringer Straße 1
+                br
+                | Salzburg, A-5020
+                br
+                abbr(title="Phone") T:
+                | &nbsp;+43 (0)664 / 156 33 23
+              address
+                strong Hannes Moser
+                br
+                a(href="mailto:hannes.moser@fh-salzburg.ac.at") hannes.moser@fh-salzburg.ac.at
     script(src="scripts/main.js")
   script.
     document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
