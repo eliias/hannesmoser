@@ -7,6 +7,7 @@
   "scripts": {
     "build": "./bin/build",
     "clean": "./bin/clean",
+    "copy": "./bin/copy",
     "images": "./bin/images",
     "init": "./bin/init",
     "jade": "./bin/jade",
