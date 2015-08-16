@@ -8,6 +8,6 @@ npm run init &&
 npm run lint &&
 npm run jade &&
 npm run images &&
-npm run less &&
+npm run css &&
 npm run copy &&
 browserify -d -e ./src/scripts/main.js -t babelify -p [minifyify --no-map] > ./dist/scripts/main.js
