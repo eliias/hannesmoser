@@ -4,3 +4,4 @@
 
 # copy files
 cp src/*.html ./dist
+cp -R node_modules/font-awesome/fonts ./dist

@@ -8,19 +8,11 @@
 @import "../../node_modules/bootstrap/less/utilities";
 @import "../../node_modules/bootstrap/less/responsive-utilities";
 
+@import "../../node_modules/font-awesome/less/font-awesome";
+
 @brand-primary: #00CC85;
 
-html {
-  height: 100%
-}
-
 body {
-  min-height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
@@ -37,5 +29,13 @@ ul {
     display: inline;
     white-space: nowrap;
     padding: 0 1em;
+  }
+}
+
+.social-icons a {
+  color: #ccc;
+
+  &:hover {
+    color: @brand-primary;
   }
 }

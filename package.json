@@ -44,6 +44,7 @@
     "browserify": "^11.0.1",
     "cssnano": "^2.2.0",
     "eslint": "^1.1.0",
+    "font-awesome": "^4.4.0",
     "gaze": "^0.5.1",
     "hbsfy": "^2.2.1",
     "http-server": "^0.8.0",
