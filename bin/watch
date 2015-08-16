@@ -9,7 +9,7 @@ javascript() {
 
 # watch style files
 styles() {
-  nodemon --watch src/styles/*.less --ext less --exec 'npm run less'
+  nodemon --watch src/styles/*.less --ext less --exec 'npm run css'
 }
 
 # watch jade files

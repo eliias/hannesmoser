@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-# author: Hannes Moser <hannes@impossiblearts.com>
-#
-
-# compile css
-lessc --autoprefix="last 2 versions" --clean-css="--compatibility=ie10 --advanced" ./src/styles/main.less ./dist/styles/main.css
