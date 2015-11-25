@@ -1,15 +1,14 @@
+# system
+.DS_Store
+
 # IDE
-.idea
+.idea/
 
-# pid
-*.pid
+# jekyll
+_site
+.sass-cache
+.jekyll-metadata
 
-# logs
-logs
-*.log
+# Node.js
+node_modules/
 
-# deps
-node_modules
-
-# build
-dist

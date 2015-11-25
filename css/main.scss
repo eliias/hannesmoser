@@ -1,0 +1,45 @@
+---
+#
+---
+@charset "utf-8";
+
+$brand-primary: #00CC85;
+
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/type";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/labels";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
+@import "../node_modules/font-awesome/scss/font-awesome";
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+section {
+  display: block;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    display: inline;
+    white-space: nowrap;
+    padding: 0 1em;
+  }
+}
+
+.social-icons a {
+  color: #ccc;
+
+  &:hover {
+    color: $brand-primary;
+  }
+}

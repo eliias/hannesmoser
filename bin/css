@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# author: Hannes Moser <hannes@impossiblearts.com>
-#
-
-# compile css
-lessc ./src/styles/main.less | postcss --config postcss.json --output ./dist/styles/main.css
-
