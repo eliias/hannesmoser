@@ -1,0 +1,32 @@
+# Blog
+title: Hannes Moser
+email: box@hannes-moser.com
+description: >
+  I am a software engineer, lecturer at Salzburg University of Applied Sciences
+  and have a lovely but crazy dog named Gismo.
+baseurl: ""
+url: "https://blog.hannes-moser.com"
+logo: /assets/images/author.jpg
+cover: /assets/images/header.jpg
+
+# Author
+twitter_username: eliias
+github_username:  eliias
+
+author: Hannes Moser
+author_image: /assets/images/author.jpg
+
+# Settings
+paginate: 5
+
+google_analytics: UA-360696-21
+
+# Build settings
+markdown: kramdown
+theme: minima
+gems:
+  - jekyll-feed
+  - jekyll-paginate
+exclude:
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,10 @@
+# system
+.DS_Store
+
+# IDE
+.idea/
+
+# jekyll
+_site
+.sass-cache
+.jekyll-metadata
