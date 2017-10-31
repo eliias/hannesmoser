@@ -2,8 +2,8 @@
 title: Hannes Moser
 email: box@hannes-moser.com
 description: >
-  I am a software engineer, lecturer at Salzburg University of Applied Sciences
-  and have a lovely but crazy dog named Gismo.
+  I am a software developer with a slight faible for web platforms, services and API design. The last 15 years, I have worked on browser games, scalable websites, APIs and web applications.
+
 baseurl: ""
 url: "https://blog.hannes-moser.com"
 logo: /assets/images/author.jpg
@@ -24,7 +24,7 @@ google_analytics: UA-360696-21
 # Build settings
 markdown: kramdown
 theme: minima
-gems:
+plugins:
   - jekyll-feed
   - jekyll-paginate
 exclude:
