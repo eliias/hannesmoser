@@ -11,7 +11,11 @@ url: "https://hannesmoser.at"
 twitter_username: eliias
 github_username:  eliias
 
+sass:
+  sass_dir: css
+  style: compressed
+
 # Build settings
 markdown: kramdown
 
-exclude: ["node_modules", "package.json", "LICENSE"]
+exclude: ["node_modules", "package.json", "package-lock.json"]
