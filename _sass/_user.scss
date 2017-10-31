@@ -7,3 +7,23 @@
   border-radius: 100%;
   text-indent: -9999px;
 }
+
+.post-excerpt {
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  video {
+    width: 100%;
+  }
+}
+
+.text-muted {
+  color: #ccc;
+}
+
+small::after {
+  content: "\A";
+  white-space: pre;
+}

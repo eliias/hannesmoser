@@ -11,10 +11,6 @@ insert_final_newline = true
 [*.{js,rb,css,sass}]
 charset = utf-8
 
-[*.md]
-indent_style = space
-indent_size = 2
-
-[*.rb]
+[*.{md,rb,html,scss}]
 indent_style = space
 indent_size = 2

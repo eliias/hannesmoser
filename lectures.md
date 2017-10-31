@@ -11,7 +11,7 @@ Full information about the [bachelor](http://www.fh-salzburg.ac.at/en/discipline
 and [master](http://www.fh-salzburg.ac.at/en/disciplines/design-media-arts/master-multimediatechnology/curriculum-structure/curriculum/)
 degree programs, can be found on the [official website](http://www.fh-salzburg.ac.at/en).
 
-## Bachelor degree program
+## Undergraduate courses
 
 ### Frontend development 1
 
@@ -38,7 +38,13 @@ They use tools to examine code quality.
 **Contents:** Front end for mobile web, offline functionality, MV* framework (e.g. Ember, Backbone or Angular), Canvas
 vs. SVG, managing dependencies, testing, the latest developments and tools.
 
-### Web operations
+### Web Production Workflows 
+
+Students know the specifics of web workflows and are able to use agile methods in web projects. They are familiar with the advantages and disadvantages of pair programming and are able to work in pairs with different people. They are able to use a distributed version control system within a team of developers: branching, merging and writing log notifications. They develop in small sections which are each separately checked in. They know why development, staging and production servers are required in web development, are familiar with the workflow and can successfully develop, push and deploy. They know various types of automated tests and can write unit tests for models. They can use a SCRUM board (real and virtual). They can formulate user stories and acceptance criteria.
+
+**Contents:** Agile methods, XP, SCRUM, pair programming, version control with git, test-driven development. Development, staging and production servers, deployment, user stories.
+
+### Web Operations
 
 They are able to install and configure a production web server with virtual hosts and SSL, and are familiar with their
 configuration files, log file and folders. They can use tools to supervise the operation of the server and alert them
@@ -46,7 +52,13 @@ in the case of downtime. They can configure a load balancer.
 
 **Contents:** UNIX, web server Apache(plus possible alternatives), monitoring, load balancer.
 
-## Master degree program
+### Bachelor Thesis
+
+They know complex concepts and advanced theories from the compulsory elective 1 and can apply these in a specialist reflected bachelor thesis to the concrete tasks of an interdisciplinary multimedia project. They are aware of the latest specialist literature and possible research literature on the topics relevant to the interdisciplinary multimedia qualification.
+
+**Contents:** Supporting the bachelor thesis 2; linking practical problems to theoretical background knowledge, possible link to current research.
+
+## Graduate courses
 
 ### Client-side web engineering
 

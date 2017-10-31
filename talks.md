@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Talks
+title: Talks & Volunteer Work
 permalink: /talks/
 ---
 
-I do like to give talks about web development, technology and web in academia. You can find
-a complete history of talks (including video/slides) here. I also help organizing
+I give talks about web development, technology and web in academia. You can find
+a complete history of talks (including video/slides) here. I also organize
 the following community events.
 
 * [Barcamp Salzburg "The Next Web"](https://barcamp-sbg.at/)
