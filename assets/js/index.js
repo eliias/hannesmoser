@@ -26,4 +26,10 @@
         
     });
 
+    var badge = 1;
+    var favicon = new Favico({
+        animation : 'popFade'
+    });
+    favicon.badge(badge)
+
 }(jQuery));
