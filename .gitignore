@@ -5,6 +5,5 @@
 .idea/
 
 # jekyll
-_site
 .sass-cache
 .jekyll-metadata

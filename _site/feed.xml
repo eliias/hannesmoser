@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hannes Moser</title>
+    <description>I am a software developer with a slight faible for web platforms, services and API design. The last 15 years, I have worked on browser games, scalable websites, APIs and web applications.
+</description>
+    <link>https://www.hannesmoser.at/</link>
+    <atom:link href="https://www.hannesmoser.at/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 08 Dec 2018 16:44:59 -0500</pubDate>
+    <lastBuildDate>Sat, 08 Dec 2018 16:44:59 -0500</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>EYA Social Hackathon 2017</title>
+        <description>&lt;p&gt;Over the weekend, me and my team attended the &lt;a href=&quot;https://eu-youthaward.org/social-hackathon-2017/&quot;&gt;EYA Social Hackathon 2017&lt;/a&gt;.
+I’d like to post our result, cause I really like our idea and concept.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;We love food and friends and therefore we need to create the ultimate tool to combine the best of both worlds.
+dumpster chef is an adventurous journey and your chance to make new friends and the world a better place by opposing
+the throw-away society.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Yesterday, we had to present our results at the &lt;a href=&quot;http://www.salzburg.com/nachrichten/unternehmen/wir-ueber-uns/sn/artikel/sn-saal-ihre-veranstaltung-in-modernem-rahmen-1503/&quot;&gt;SN Saal&lt;/a&gt;
+in Salzburg. There is also a video with our presentation.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/awpqTNC5XRo&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;We have put all our resources onto Github. So if you are interested in any part of the project, feel free to
+&lt;a href=&quot;https://github.com/multimediatechnology/dumpster&quot;&gt;fork it&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There is also a summary at the &lt;a href=&quot;https://portfolio.mediacube.at/projects/2017-dumpster-chef&quot;&gt;Mediacube Portfolio&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 05 Mar 2017 00:00:00 -0500</pubDate>
+        <link>https://www.hannesmoser.at/2017/03/05/eya-social-hackathon.html</link>
+        <guid isPermaLink="true">https://www.hannesmoser.at/2017/03/05/eya-social-hackathon.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
