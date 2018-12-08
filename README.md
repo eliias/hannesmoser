@@ -1,6 +1,6 @@
-# hannesmoser.at
+# www.hannesmoser.at
 
-> My personal website.
+> My personal website [https://www.hannesmoser.at](https://www.hannesmoser.at).
 
 ## Setup
 
