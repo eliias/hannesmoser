@@ -1,4 +1,4 @@
-FROM ruby:2.5.3 AS builder
+FROM ruby:2.7.1 AS builder
 
 WORKDIR /app
 
