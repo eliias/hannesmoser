@@ -6,4 +6,8 @@
 
 # jekyll
 .sass-cache
+.jekyll-cache
 .jekyll-metadata
+
+# generated
+_site
