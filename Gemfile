@@ -11,7 +11,7 @@ group :jekyll_plugins do
   gem 'jekyll-paginate', '~> 1.1.0'
 end
 
-gem 'redcarpet', '~> 3.5.0'
+gem 'redcarpet', '~> 3.5.1'
 
 group :development do
   gem 'rubocop', require: false
