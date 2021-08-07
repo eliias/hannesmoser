@@ -1,15 +1,14 @@
-FROM ruby:2.7.1 AS builder
+FROM mhart/alpine-node:14 AS builder
 
 WORKDIR /app
 
-COPY Gemfile ./
-COPY Gemfile.lock ./
+COPY package.json yarn.lock ./
 
-RUN bundle install
+RUN yarn
 
 COPY . ./
 
-RUN bundle exec jekyll build
+RUN yarn build
 
 FROM nginx:1-alpine
 
@@ -17,6 +16,6 @@ RUN mkdir -p /app
 COPY CHECKS /app/CHECKS
 
 WORKDIR /usr/share/nginx/html
-COPY --from=builder /app/_site .
+COPY --from=builder /app/public .
 
 EXPOSE 80

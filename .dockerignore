@@ -1,0 +1,5 @@
+.cache/
+.idea/
+.git/
+docs/
+node_modules/
