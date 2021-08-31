@@ -4,6 +4,7 @@ import styled from "styled-components";
 type Props = PropsWithChildren<{
   background?: string;
   wide?: boolean;
+  invert?: boolean;
 }>;
 
 type InnerProps = PropsWithChildren<Omit<Props, "invert">>;

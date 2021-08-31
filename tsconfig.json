@@ -11,7 +11,11 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "noEmit": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "graphql-types": ["graphql-types.ts"]
+    }
   },
   "include": ["src/**/*"]
 }

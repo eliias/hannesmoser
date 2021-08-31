@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="194px" height="92px" viewBox="0 0 194 92" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#5309AF" offset="0%"></stop>
+            <stop stop-color="#9B09C4" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="main" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <path d="M20.096,0 L20.096,35.072 L57.088,35.072 L57.088,0 L77.184,0 L77.184,91.392 L57.088,91.392 L57.088,51.968 L20.096,51.968 L20.096,91.392 L0,91.392 L0,0 L20.096,0 Z M123.008,0 L144.384,62.848 L144.64,62.848 L164.864,0 L193.152,0 L193.152,91.392 L174.336,91.392 L174.336,26.624 L174.08,26.624 L151.68,91.392 L136.192,91.392 L113.792,27.264 L113.536,27.264 L113.536,91.392 L94.72,91.392 L94.72,0 L123.008,0 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>
