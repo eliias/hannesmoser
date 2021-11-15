@@ -31,9 +31,7 @@ pipeline {
         '''
 
         sh label: 'deploy', script: ''' #!/usr/bin/env bash
-        sudo docker pull registry.conc.at/hannesmoser:$BUILD_NUMBER
-        sudo docker tag registry.conc.at/hannesmoser:$BUILD_NUMBER dokku/hannesmoser:$BUILD_NUMBER
-        ssh dokku@projects.conc.at "tags:deploy hannesmoser $BUILD_NUMBER"
+        ssh dokku@projects.conc.at "git:from-image hannesmoser registry.conc.at/hannesmoser:$BUILD_NUMBER"
         '''
       }
     }
