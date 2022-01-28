@@ -19,8 +19,6 @@ author_image: /assets/images/author.jpg
 # Settings
 paginate: 5
 
-google_analytics: UA-360696-21
-
 # Build settings
 markdown: kramdown
 theme: minima
