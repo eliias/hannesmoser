@@ -21,7 +21,13 @@ pipeline {
 
       steps {
         sh label: 'container', script: ''' #!/usr/bin/env bash
-        sudo docker build -t hannesmoser:$BUILD_NUMBER -t hannesmoser:latest .
+        # build and tag release artifact
+        sudo docker build \
+          -t hannesmoser:$BUILD_NUMBER \
+          -t hannesmoser:latest \
+          -t registry.conc.at/hannesmoser:$BUILD_NUMBER \
+          -t registry.conc.at/hannesmoser:latest \
+          .
 
         sudo docker tag hannesmoser:$BUILD_NUMBER registry.conc.at/hannesmoser:$BUILD_NUMBER
         sudo docker tag hannesmoser:latest registry.conc.at/hannesmoser:latest
@@ -31,9 +37,8 @@ pipeline {
         '''
 
         sh label: 'deploy', script: ''' #!/usr/bin/env bash
-        sudo docker pull registry.conc.at/hannesmoser:$BUILD_NUMBER
-        sudo docker tag registry.conc.at/hannesmoser:$BUILD_NUMBER dokku/hannesmoser:$BUILD_NUMBER
-        ssh dokku@projects.conc.at "tags:deploy hannesmoser $BUILD_NUMBER"
+        # deploy
+        ssh dokku@projects.conc.at "git:from-image hannesmoser registry.conc.at/hannesmoser:$BUILD_NUMBER"
         '''
       }
     }
