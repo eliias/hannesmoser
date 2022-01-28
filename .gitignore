@@ -10,4 +10,11 @@
 .jekyll-metadata
 
 # generated
-_site
+_site/
+public/
+
+# Node.js
+node_modules/
+
+# tmp
+.cache/
