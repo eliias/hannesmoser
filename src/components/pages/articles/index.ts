@@ -1,2 +1,2 @@
-export { Articles, query } from "./Articles";
+export { Article } from "./Article";
 export { Latest } from "./Latest";

@@ -1,12 +1,7 @@
-export {
-  Articles,
-  query as articlesPageQuery,
-  Latest as LatestArticles,
-} from "./articles";
+export { Article, Latest as LatestArticles } from "./articles";
 export { Experiments } from "./experiments";
 export { Home } from "./home";
 export { Journal } from "./journal";
 export { Lectures } from "./lectures";
 export { NotFound } from "./not-found";
-export { Projects } from "./projects";
 export { Talks } from "./talks";

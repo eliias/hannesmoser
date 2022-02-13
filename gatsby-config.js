@@ -27,6 +27,15 @@ module.exports = {
         name: `articles`,
         path: `${__dirname}/src/articles`,
       },
+      __key: "articles",
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `articles`,
+        path: `${__dirname}/src/pages`,
+      },
+      __key: "pages",
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -37,7 +46,7 @@ module.exports = {
             options: {
               terminal: "carbon",
               theme: "shades-of-purple",
-            }
+            },
           },
           {
             resolve: `gatsby-remark-images`,
@@ -52,8 +61,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-graphql-codegen`,
       options: {
-        documentPaths: ['./src/**/*.{ts,tsx}']
-      }
+        documentPaths: ["./src/**/*.{ts,tsx}"],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          components: `${__dirname}/src/components`,
+        },
+        extensions: [],
+      },
     },
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,

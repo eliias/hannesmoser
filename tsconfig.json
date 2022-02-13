@@ -3,7 +3,10 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
-    "lib": ["dom", "es2020"],
+    "lib": [
+      "dom",
+      "es2020"
+    ],
     "allowJs": true,
     "jsx": "react",
     "strict": true,
@@ -14,8 +17,18 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "graphql-types": ["graphql-types.ts"]
+      "components/*": [
+        "src/components/*"
+      ],
+      "components": [
+        "src/components"
+      ],
+      "graphql-types": [
+        "graphql-types.ts"
+      ]
     }
   },
-  "include": ["src/**/*"]
+  "include": [
+    "src/**/*"
+  ]
 }

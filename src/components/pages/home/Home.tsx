@@ -1,6 +1,5 @@
 import React from "react";
-import { graphql, Link, useStaticQuery } from "gatsby";
-import { HomeQuery } from "graphql-types";
+import { Link } from "gatsby";
 
 import {
   Byline,
@@ -19,29 +18,9 @@ import {
 
 // @ts-ignore
 import logoShopify from "../../../images/logos/shopify.svg";
-
-import { Articles } from "./components";
-
-const query = graphql`
-  query Home {
-    articles: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 1
-    ) {
-      nodes {
-        frontmatter {
-          title
-          slug
-        }
-        excerpt(format: PLAIN)
-      }
-    }
-  }
-`;
+import { LatestArticles } from "components/pages";
 
 export function Home() {
-  const data = useStaticQuery<HomeQuery>(query);
-
   return (
     <Layout>
       <SEO title="Home" />
@@ -104,7 +83,7 @@ export function Home() {
           Hackathons, Barcamps & Meetups.
         </Text>
       </Section>
-      <Articles data={data.articles} />
+      <LatestArticles />
       <Section wide>
         <Heading level="h2" align="center">
           Books & Papers
