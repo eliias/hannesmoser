@@ -1,3 +1,3 @@
-import { Projects } from "../components/pages";
+import { AceOfMace } from "components/pages";
 
-export default Projects;
+export default AceOfMace;

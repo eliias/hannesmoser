@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Hannes Moser`,
-    description: ``,
+    description: `Personal website`,
     author: `@eliias`,
     siteUrl: `https://www.hannesmoser.at`,
   },
@@ -79,7 +79,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `hannesmoser`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,

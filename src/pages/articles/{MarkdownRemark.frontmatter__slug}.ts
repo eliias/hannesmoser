@@ -1,4 +1,3 @@
-import React from "react";
 import { graphql } from "gatsby";
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 import { Article } from "components/pages";

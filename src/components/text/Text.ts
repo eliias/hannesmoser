@@ -12,5 +12,5 @@ export const Text = styled.p<Props>`
   font-family: var(--font-serif);
   line-height: ${theme.baseSize * 1.4}rem;
   margin-bottom: 2rem;
-  text-align: ${({ align }) => align ? align : "left"};
+  text-align: ${({ align }) => (align ? align : "left")};
 `;

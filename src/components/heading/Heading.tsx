@@ -40,7 +40,7 @@ const heading = new Map(
       );
       font-weight: var(${({ weight }) => fontWeight.get(weight || "bold")});
       font-size: ${theme.sizes[index]}rem;
-      letter-spacing: -${theme.sizes[index] * 0.015}rem;
+      letter-spacing: -${index > 3 ? theme.sizes[index] * 0.015 : -0.015}rem;
       line-height: ${theme.sizes[index] * 1.2}rem;
       margin-top: 0;
       margin-bottom: ${2}rem;

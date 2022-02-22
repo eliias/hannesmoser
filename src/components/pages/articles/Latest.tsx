@@ -3,12 +3,13 @@ import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import styled from "styled-components";
 
-import { Byline, Heading, Layout, Section, SEO } from "../..";
+import { Heading, Layout, Section, SEO } from "../..";
 
 const query = graphql`
   query LatestArticles {
     latestArticles: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fileAbsolutePath: { regex: "/(articles)/" } }
       limit: 10
     ) {
       nodes {
@@ -34,7 +35,7 @@ export function Latest() {
       <Section>
         <Heading level="h1">Articles</Heading>
         {data.latestArticles.nodes.map(article => (
-          <article>
+          <article key={article.frontmatter?.slug!}>
             <Heading level="h2">{article.frontmatter?.title}</Heading>
             <p>{article.excerpt}</p>
             <Link to={article.frontmatter?.slug!}>Read more…</Link>

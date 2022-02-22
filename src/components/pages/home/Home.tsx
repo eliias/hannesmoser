@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, PageProps } from "gatsby";
+import { HomeLatestArticlesQuery } from "graphql-types";
 
 import {
-  Byline,
   Columns,
   Heading,
   Layout,
@@ -16,34 +16,32 @@ import {
   theme,
 } from "../..";
 
-// @ts-ignore
-import logoShopify from "../../../images/logos/shopify.svg";
-import { LatestArticles } from "components/pages";
+import { Articles, BooksAndPapers } from "./components";
 
-export function Home() {
+import logoShopify from "../../../images/logos/shopify.svg";
+
+type Props = PageProps<HomeLatestArticlesQuery>;
+
+export function Home({ data }: Props) {
   return (
     <Layout>
       <SEO title="Home" />
       <Section>
-        <Heading level="h1">
-          Hello there,
-          <Byline>my name is Hannes.</Byline>
-        </Heading>
+        <Heading level="h1">Hi, I am Hannes!</Heading>
         <Heading
           level="h5"
           font="serif"
           weight="light"
           color={theme.colors.muted}
         >
-          I am an engineering manager, <Mark>software engineer,</Mark> computer
-          science and data enthusiast, speaker, teacher and constant learner.
+          I am a technical lead, <Mark>software engineer,</Mark> computer
+          science and data enthusiast, teacher and constant learner.
         </Heading>
         <Text>
-          Currently I am working on the next generation of information retrieval
-          systems and discovery experiences at{" "}
-          <a href="https://shopify.com">Shopify</a>. Me and my team are building
-          a scalable stateful streaming system used for relevance engineering
-          and embarrassingly parallel data processing.
+          I have recently worked on the next generation of information retrieval
+          systems at <a href="https://shopify.com">Shopify</a>. The team that I
+          led created a scalable discovery platform, used by relevance
+          engineers, data scientists and data engineers.
         </Text>
         <Text>
           My <a href="https://neele.codes">partner</a> and I, spend our free
@@ -62,94 +60,86 @@ export function Home() {
           conference <a href="https://conc.at">.concat()</a>.
         </Text>
         <Text>
-          For the last 20+ years I have built products and teams for a multitude
-          of companies such as{" "}
+          The last 20+ years I have built games, platforms, services and teams
+          for a multitude of companies such as{" "}
+          <a href="https://shopify.com">Shopify</a>,{" "}
           <a href="https://s3.medel.com/pdf/US/Continents-and-Oceans.pdf">
             MED-EL
           </a>
           , <a href="https://www.redbullcontentpool.com/">Red Bull</a> and{" "}
           <a href="https://www.redbullcontentpool.com/">Wiberg</a>. My
           contributions include, but are not limited to, technical decision
-          making, R&D, mentoring and leading teams.
+          making, applied R&D, mentoring and leading teams.
         </Text>
         <Text>
           I am an adjunct lecturer, teaching undergrad and grad students at the{" "}
           <a href="https://www.fh-salzburg.ac.at/en/">
             University of Applied Sciences Salzburg
           </a>{" "}
-          computer science department. Occasionally you can listen to me, when{" "}
-          <Link to="/talks">speaking</Link> about web development and academia
-          at conferences and when I participate in community events such as
-          Hackathons, Barcamps & Meetups.
+          MultiMediaTechnology department. Occasionally you can listen to me,
+          when I am <Link to="/talks">speaking</Link> about web development and
+          academia at conferences and when I participate in community events
+          such as <a href="https://www.game-jam.at/">Hackathons</a>,{" "}
+          <a href="https://barcamp-sbg.at/">Barcamps</a> &{" "}
+          <a href="https://www.meetup.com/en-AU/salzburgwebdev/">Meetups</a>.
         </Text>
       </Section>
-      <LatestArticles />
-      <Section wide>
-        <Heading level="h2" align="center">
-          Books & Papers
-        </Heading>
-        <Text color="var(--color-text-muted)" align="center">
-          A personal selection of recently read books and scientific papers.
-        </Text>
-        <Columns>
-          <ul>
-            <li>The Imposter Handbook</li>
-            <li>Book B</li>
-          </ul>
-          <ul>
-            <li>Book A</li>
-            <li>Book B</li>
-          </ul>
-          <ul>
-            <li>Book A</li>
-            <li>Book B</li>
-          </ul>
-        </Columns>
-        <Section>
-          <Text>
-            You might ask yourself, is Hannes one of the superficial hipsters
-            that tries to impress with how well read he is?{" "}
-            <b>Fair question!</b>
-          </Text>
-          <Text>
-            My answer would be that I maintain this list strictly to keep myself
-            accountable to not buy even more books but stay focused on the
-            topics I have planned to dive into. Over the years, I have also
-            figured out that I learn in a very visual way. Even if you consider
-            a book not as the classical visual medium, I often tend to recall
-            and connect information based on the layout of text, code snippets
-            and illustrations. That said, I probably should also add a category
-            of very helpful Youtube videos I have watched over time.
-          </Text>
-          <Text>
-            My role model is{" "}
-            <a href="https://blog.acolyer.org/about/">Adrian Colyer</a> and the
-            mailing list he operates:{" "}
-            <a href="https://blog.acolyer.org/">The Morning Paper</a>. If you
-            haven't heard about him and the mailing list, you should definitely
-            subscribe and give it a try.
-          </Text>
-        </Section>
-      </Section>
+      <Articles data={data.latestArticles} />
+      <BooksAndPapers />
       <Section wide>
         <Heading level="h2" align="center">
           Projects
         </Heading>
         <Text color="var(--color-text-muted)" align="center">
-          A personal selection of recently read books and scientific papers.
+          Enjoyable side-hustles and hobby projects.
         </Text>
         <Columns>
           <ul>
-            <li>Book A</li>
-            <li>Book B</li>
+            <li>
+              <a href="https://spurt.li">Spurt.li</a>
+            </li>
+            <li>
+              <a href="https://dumpsterchef.org">Dumpsterchef</a>
+            </li>
+            <li>
+              <a href="https://neele.cooks">neele.cooks</a>
+            </li>
+            <li>
+              <a href="https://spurt.li">Ace of Mace</a>
+            </li>
           </ul>
           <ul>
-            <li>Book A</li>
-            <li>Book B</li>
+            <li>
+              <a href="https://github.com/eliias/peterpawner">
+                peterpawner – A raw chess engine written in Go
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/eliias/rusty">
+                rusty – A raw chess engine written in Rust
+              </a>
+            </li>
+            <li>
+              <a href="https://chess.conc.at">
+                chess – An online real-time chess game
+              </a>
+            </li>
+            <li>
+              <a href="https://chess.conc.at">Accessibility Study</a>
+            </li>
           </ul>
           <ul>
-            <li>Book A</li>
-            <li>Book B</li>
+            <li>
+              <a href="https://chess.conc.at">
+                Explorations of interesting data-structures and algorithms
+              </a>
+            </li>
+            <li>
+              <a href="https://chess.conc.at">Useful SQL snippets</a>
+            </li>
+            <li>
+              <a href="https://chess.conc.at">A small online game</a>
+            </li>
           </ul>
         </Columns>
       </Section>
@@ -192,54 +182,15 @@ export function Home() {
         </ul>
       </Section>
       <Section>
-        Recent books:
-        <ul>
-          <li>Go compiler</li>
-          <li>Relevant search</li>
-          <li>Imposter handbook</li>
-        </ul>
-        All time favorite books:
-        <ul>
-          <li>Dragon book</li>
-        </ul>
-      </Section>
-      <Section>
-        Side hustle and projects
-        <ul>
-          <li>Spurtli App</li>
-          <li>LASER keyboard</li>
-        </ul>
-        Hall of fame
-        <ul>
-          <li>Spurtli</li>
-          <li>Ace of Mace</li>
-          <li>Dumpsterchef</li>
-          <li>cnuddl</li>
-          <li>dovigo</li>
-        </ul>
-      </Section>
-      <Section>
-        Recent lectures
+        Lectures
         <ul>
           <li>Client-side web engineering</li>
         </ul>
-        Previous lectures
-        <ul>
-          <li>…</li>
-        </ul>
-      </Section>
-      <Section>
-        Talks & slides
-        <ul>
-          <li>…</li>
-        </ul>
       </Section>
       <Section invert>
-        <Heading level="h3" color="white">
-          Timeline
-        </Heading>
+        <Heading level="h3">Timeline</Heading>
         <section>
-          <Text color="white">
+          <Text>
             If you care about these things, here you can find my professional
             vitae:
           </Text>
@@ -247,14 +198,11 @@ export function Home() {
             <TimelineItem>
               <ol>
                 <li style={{ marginBottom: "5rem" }}>
-                  <Heading level="h6" color="white">
+                  <Heading level="h6">
                     <Logo src={logoShopify} />
                     Senior Production Engineer
                   </Heading>
-                  <Text
-                    color="white"
-                    style={{ fontSize: "18px", lineHeight: "26px" }}
-                  >
+                  <Text style={{ fontSize: "18px", lineHeight: "26px" }}>
                     Spearheaded Shopify’s efforts in the field of Search
                     Relevance across multiple applications (Storefront,
                     Back-office). Help building the next generation of scalable
@@ -269,10 +217,8 @@ export function Home() {
                   </footer>
                 </li>
                 <li>
-                  <Heading level="h6" color="white">
-                    Senior Developer
-                  </Heading>
-                  <Text color="white">Shopify identity service.</Text>
+                  <Heading level="h6">Senior Developer</Heading>
+                  <Text>Shopify identity service.</Text>
                   <footer>
                     <a href="#">Authentication</a>
                   </footer>

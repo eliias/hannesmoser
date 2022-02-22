@@ -3395,3 +3395,8 @@ export type ArticleQueryVariables = Exact<{
 
 
 export type ArticleQuery = { markdownRemark?: { html?: string | null, frontmatter?: { date?: any | null, slug?: string | null, title?: string | null } | null } | null };
+
+export type HomeLatestArticlesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type HomeLatestArticlesQuery = { latestArticles: { nodes: Array<{ excerpt?: string | null, frontmatter?: { title?: string | null, slug?: string | null } | null }> } };
