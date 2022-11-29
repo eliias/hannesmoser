@@ -16,7 +16,7 @@ pipeline {
 
     stage("Build & Deploy") {
       when {
-        branch 'master'
+        branch 'main'
       }
 
       steps {
