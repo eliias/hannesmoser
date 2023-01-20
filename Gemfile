@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 ruby '3.0.4'
 
-gem 'jekyll', '4.3.1'
+gem 'jekyll', '4.3.2'
 gem 'minima', '~> 2.5.1'
 
 group :jekyll_plugins do
