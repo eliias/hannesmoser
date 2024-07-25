@@ -6,7 +6,7 @@
 
 ```bash
 bundle
-jekyll s
+bundle exec jekyll serve --incremental
 ```
 
 ## Dependencies
