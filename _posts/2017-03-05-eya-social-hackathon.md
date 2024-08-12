@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "EYA Social Hackathon 2017"
+date: 2017-03-05
 ---
 
 Over the weekend, me and my team attended the [EYA Social Hackathon 2017](https://eu-youthaward.org/social-hackathon-2017/).

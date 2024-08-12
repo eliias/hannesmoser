@@ -1,0 +1,60 @@
+@import "./fonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.content section {
+  @apply mb-20;
+}
+
+.content p {
+  @apply antialiased leading-7 text-xl text-black mb-5 font-serif;
+}
+
+.content h1 {
+  @apply text-5xl font-bold mt-6 mb-12;
+}
+
+.content h2 {
+  @apply text-3xl font-bold mt-6 mb-6;
+}
+
+.content h3 {
+  @apply text-2xl font-bold flex flex-col mb-2;
+}
+
+.content h3 small {
+  @apply text-base text-gray-400 font-semibold;
+}
+
+.content h4 {
+  @apply text-lg font-semibold flex flex-col mb-2;
+}
+
+.content h5 {
+  @apply font-semibold flex flex-col mb-2;
+}
+
+.content ul {
+  @apply mb-8;
+}
+
+.content ul > li {
+  @apply list-disc mb-1 ml-4 text-gray-600;
+}
+
+.content a {
+  @apply text-violet-700 underline;
+}
+
+.content a .icon {
+  @apply inline-block mr-1;
+}
+
+:root {
+  --plyr-color-main: #8b5cf6;
+}
+.plyr {
+  @apply rounded-xl drop-shadow-2xl mb-12;
+}

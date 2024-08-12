@@ -31,5 +31,4 @@
         animation : 'popFade'
     });
     favicon.badge(badge)
-
 }(jQuery));

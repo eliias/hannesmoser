@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+{% include head.html %}
+<body>
+{% include header.html %}
+<div class="mb-12 pb-8 bg-white">
+  <div class="min-h-[450px] bg-cover bg-center" {% if site.cover %}style="background-image: url({{ site.cover | prepend: site.baseurl }})"{% endif %}></div>
+
+  <header class="container mx-auto">
+    {% if site.logo %}
+    <div class="flex justify-center -translate-y-16 h-20">
+      <img alt="{{ site.title }}"
+           class="shadow-lg inline-block h-32 w-32 rounded-full ring-4 ring-white"
+           src="{{ site.logo | prepend: site.baseurl }}" alt="Hannes Moser">
+    </div>
+    {% endif %}
+
+    <h1 class="text-center text-5xl font-bold mb-3">{{ site.title }}</h1>
+    <h2 class="antialiased tracking-tight text-lg text-center text-gray-600 leading-7 mb-5">{{ site.description }}</h2>
+    <div class="flex gap-4 row justify-center">
+      {% for social in site.social %}
+        {% if social.url %}
+          <a class="icon-{{ social.icon }}" href="{{ social.url }}" {% if social.desc %} title="{{ social.desc }}" {% endif %}>
+            <i class="fa fa-{{ social.icon }}"></i>
+          </a>
+          &nbsp;&nbsp;·&nbsp;&nbsp;
+        {% endif %}
+      {% endfor %}
+      {% include navigation.html %}
+    </div>
+  </header>
+</div>
+
+<div id="top-navigation" class="opacity-0 fixed top-4 w-full transition-all duration-200 scale-90 ease-[cubic-bezier(.73,.7,.57,1.76)]">
+  <div class="bg-white rounded-xl container mx-auto shadow-lg shadow-gray-100/1 ring-1 ring-gray-100">
+    <nav class="flex items-center justify-between p-4 top-0 animated bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 gap-6">
+      <a href={{"/" | prepend: site.baseurl }}><span class="text-lg font-medium text-black justify-self-start mr-10">Hannes Moser</span></a>
+      <a class="text-lg font-medium" href={{"/blog/" | prepend: site.baseurl }}>Blog</a>
+      <a class="text-lg font-medium" href={{"/projects/" | prepend: site.baseurl }}>Projects</a>
+      <a class="text-lg font-medium" href={{"/lectures/" | prepend: site.baseurl }}>Lectures</a>
+      <a class="text-lg font-medium" href={{"/community/" | prepend: site.baseurl }}>Community</a>
+      <a class="text-lg font-medium" href={{"/contact/" | prepend: site.baseurl }}>Contact</a>
+    </nav>
+  </div>
+</div>
+
+<main class="container mx-auto content" role="main">
+  <section class="mb-10">
+    <h2 class="text-3xl font-bold mb-3">What I Do</h2>
+    <p class="antialiased tracking-tight text-lg text-gray-600 leading-7 mb-3">
+      I develop and architect web applications, services, and databases for a diverse
+      set of clients and consult with companies on creating and optimizing software
+      development processes. This work includes architectural decisions, coaching
+      and mentoring engineering teams and engineers, designing release processes,
+      and consulting leadership.
+    </p>
+    <p class="antialiased tracking-tight text-lg text-gray-600 leading-7 mb-3">
+      My previous experience includes working with startups, as well as large tech
+      companies.
+      I have helped these companies build and scale from their first user to millions.
+    </p>
+  </section>
+
+  {% for item in site.journey reversed %}
+    <article class="post mb-20" itemscope
+             itemtype="https://schema.org/BlogPosting"
+             role="article">
+      <section itemprop="description">
+        {{ item.content }}
+      </section>
+    </article>
+  {% endfor %}
+</main>
+{% include footer.html %}
+{% include javascripts.html %}
+</body>
+</html>

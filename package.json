@@ -1,0 +1,17 @@
+{
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.13",
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^7.0.4",
+    "postcss": "^8.4.40",
+    "postcss-import": "^16.1.0",
+    "tailwindcss": "^3.4.6",
+    "vite": "^5.3.5",
+    "vite-plugin-ruby": "^5.1.1"
+  },
+  "dependencies": {
+    "plyr": "^3.7.8"
+  }
+}
