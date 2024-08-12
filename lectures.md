@@ -67,7 +67,7 @@ targeted way. They develop web applications which go beyond the classic request/
 (real-time web, server push, publish and subscribe). They are familiar with tools for mobile and offline first web
 applications and know the latest technology status in the web browser.
 
-**Content:** Web components, different variations of MVC patterns, one-way/two-way data binding, websocket, WebRTC,
+**Contents:** Web components, different variations of MVC patterns, one-way/two-way data binding, websocket, WebRTC,
 local storage, indexdb, pouchdb, current developments inECMAScript, transpiler, performance metrics, mobile, current
 topics.
 
@@ -78,7 +78,7 @@ enable the automatic, fast and reliable release of new software versions. They h
 involved in development, test, integration and productive environment and can implement test automation, continuous
 integration and continuous installation.
 
-**Content:** Automation, continuous integration (e.g. Jenkins), deploymentstrategies (cloud, on-premise, container/virtualisation),
+**Contents:** Automation, continuous integration (e.g. Jenkins), deploymentstrategies (cloud, on-premise, container/virtualisation),
 DevOps, infrastructure as code, test automation, dependency management, configuration management, security, *aaS.
 
 ### Scalable web architectures
@@ -88,12 +88,5 @@ web application requires. They are able to plan a web application and develop an
 They can monitor the performance of a web application on various levels and correctly diagnose problems and set measures
 to rectify these.
 
-**Content:** Multi-tier, message queues, service oriented architecture and microservices. logging,profiling, monitoring,
+**Contents:** Multi-tier, message queues, service oriented architecture and microservices. logging,profiling, monitoring,
 C10k problem, The Twelve Factor App.
-
-### Rapid prototyping
-
-Students put idea approaches from the teaching module Multimedia Masters Project: Development & Presentation into
-practice in the form of software prototypes and evaluate the results with view to applicability and further development
-for masters projects. Relevant programming languages and frameworks from the fields of Game & Simulation Engineering
-and Web Engineering are used. Content: Technology selection and implementation coaching.

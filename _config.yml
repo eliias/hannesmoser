@@ -2,11 +2,14 @@
 title: Hannes Moser
 email: box@hannes-moser.com
 description: >
-  I am a software developer with a slight faible for web platforms, services and API design. The last 15 years, I have worked on browser games, scalable websites, APIs and web applications.
+  Seasoned software developer with a passion for web technology. Working on
+  distributed systems, data pipelines, discovery systems, real-time systems,
+  and AI-driven products. Lectures computer science at the University of Applied
+  Sciences Salzburg.
 
 baseurl: ""
 url: "https://www.hannesmoser.at"
-logo: /assets/images/author.jpg
+logo: /assets/images/author-2024.jpg
 cover: /assets/images/header.jpg
 
 # Author
@@ -14,21 +17,28 @@ twitter_username: eliias
 github_username:  eliias
 
 author: Hannes Moser
-author_image: /assets/images/author.jpg
+author_image: /assets/images/author-2024.jpg
 
-# Settings
-paginate: 5
+collections:
+  journey:
+    sort_by: date
 
 # Build settings
 markdown: kramdown
-theme: minima
+
 plugins:
+  - jekyll/vite
   - jekyll-feed
-  - jekyll-paginate
+
 exclude:
+  - bin
+  - config
+  - vite.config.ts
+  - tmp
+  - Procfile.dev
   - .sass-cache/
   - .jekyll-cache/
-  - gemfiles/
+  - docs/
   - Gemfile
   - Gemfile.lock
   - node_modules/
@@ -36,3 +46,8 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - package.json
+  - postcss.config.js
+  - tailwind.config.js
+  - yarn.lock
+

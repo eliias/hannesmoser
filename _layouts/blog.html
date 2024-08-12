@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+{% include head.html %}
+<body>
+{% include header.html %}
+
+<div class="mt-4 mb-20 w-full">
+  <div class="bg-white rounded-xl container mx-auto shadow-lg shadow-gray-100/1 ring-1 ring-gray-100">
+    <nav class="flex items-center justify-between p-4 top-0 animated bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 gap-6">
+      <a class="text-lg font-medium text-black justify-self-start mr-10" href={{"/" | prepend: site.baseurl }}>Hannes Moser</a>
+      <!--      <a class="text-lg font-medium" href={{"/blog/" | prepend: site.baseurl }}>Blog</a>-->
+      <a class="text-lg font-medium" href={{"/projects/" | prepend: site.baseurl }}>Projects</a>
+      <a class="text-lg font-medium" href={{"/lectures/" | prepend: site.baseurl }}>Lectures</a>
+      <a class="text-lg font-medium" href={{"/community/" | prepend: site.baseurl }}>Community</a>
+      <a class="text-lg font-medium" href={{"/contact/" | prepend: site.baseurl }}>Contact</a>
+    </nav>
+  </div>
+</div>
+
+<main class="container mx-auto content" role="main">
+  {% if site.paginate %}
+  {% assign posts = paginator.posts %}
+  {% else %}
+  {% assign posts = site.posts %}
+  {% endif %}
+
+  {%- if posts.size > 0 -%}
+  {%- if page.list_title -%}
+  <h2 class="text-3xl font-bold">{{ page.list_title }}</h2>
+  {%- endif -%}
+  <ul>
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
+    -%}
+    {%- for post in posts -%}
+    <li class="mb-10">
+      <h4 class="text-md text-gray-600">{{ post.date | date: date_format
+        }}</h4>
+      <h3 class="text-3xl font-bold">
+        <a class="" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h3>
+      {%- if site.show_excerpts -%}
+      {{ post.excerpt }}
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+
+  {% if site.paginate %}
+  <div class="pager">
+    <ul class="pagination">
+      {%- if paginator.previous_page %}
+      <li><a href="{{ paginator.previous_page_path | relative_url }}"
+             class="previous-page">{{ paginator.previous_page }}</a></li>
+      {%- else %}
+      <li>
+        <div class="pager-edge">•</div>
+      </li>
+      {%- endif %}
+      <li>
+        <div class="current-page">{{ paginator.page }}</div>
+      </li>
+      {%- if paginator.next_page %}
+      <li><a href="{{ paginator.next_page_path | relative_url }}"
+             class="next-page">{{ paginator.next_page }}</a></li>
+      {%- else %}
+      <li>
+        <div class="pager-edge">•</div>
+      </li>
+      {%- endif %}
+    </ul>
+  </div>
+  {%- endif %}
+  {%- endif -%}
+</main>
+{% include footer.html %}
+{% include javascripts.html %}
+</body>
+</html>
