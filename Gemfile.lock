@@ -70,7 +70,7 @@ GEM
       ffi (~> 1.0)
     redcarpet (3.6.0)
     regexp_parser (2.9.2)
-    rexml (3.3.4)
+    rexml (3.3.6)
       strscan
     rouge (4.2.0)
     rubocop (1.65.1)
