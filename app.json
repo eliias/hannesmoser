@@ -1,0 +1,23 @@
+{
+  "name": "hannesmoser",
+  "description": "Personal website",
+  "keywords": [
+    "hannesmoser"
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "healthchecks": {
+    "web": [
+      {
+        "type": "startup",
+        "name": "web check",
+        "description": "Checking if the web app responds to the / endpoint.",
+        "path": "/",
+        "attempts": 5
+      }
+    ]
+  }
+}
