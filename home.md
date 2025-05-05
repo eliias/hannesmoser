@@ -4,19 +4,16 @@ title: What I do
 permalink: /
 ---
 
-I develop and architect web applications, services, and databases for a diverse
-set of clients and consult with companies on creating and optimizing software
-development processes.
+I design and build web applications, services, and databases for a wide range of
+clients, and advise companies on optimizing their software development processes.
 
-This work includes architectural decisions, coaching
-and mentoring engineering teams and engineers, designing release processes,
-and consulting leadership.
+My work spans architectural strategy, engineering team coaching, release process
+design, and leadership consulting.
 
-My previous experience includes working with startups, as well as large tech
-companies.
-I have helped these companies build and scale from their first user to millions.
+I’ve worked with both early-stage startups and major tech companies—helping them
+scale from their first users to millions.
 
-## My journey
+## Journey
 
 ### <small class="text-muted">2023 – now</small>Staff Engineer
 
@@ -66,7 +63,7 @@ Including streaming pipelines, feature stores, and developer tooling.
 * General Purpose APIs (Node.js and Rails. Especially JSON:API & recently
   GraphQL)
 * Back Office Systems (Dashboards w/ Angular, Ember & React/Redux)
-* Apps, Hybrid Apps and PWAs (React Native, Cordova)
+* Apps, Hybrid Apps, and PWAs (React Native, Cordova)
 * Architecture (Reactive systems, Microservices & Message Queues)
 * Continuous Delivery Pipelines (Jenkins, Zero Downtime, Monitoring & Testing)
 * Containerization of infrastructure (On Premise, PaaS and Cloud Computing →
@@ -87,9 +84,9 @@ new tools, libraries, paradigms and even programming languages in every project.
 However, I have multiple years of project experience with the following
 technologies:
 
-* JavaScript for clients w/ Ember, Angular and React
+* JavaScript for clients w/ Ember, Angular, and React
 * JavaScript for tooling and on servers w/ Node.js
-* Web APIs, Standards and Methodologies
+* Web APIs, Standards, and Methodologies
 
 You can find my open source projects at:
 {% include icon-github.html username="eliias" %}
@@ -99,7 +96,7 @@ You can find my open source projects at:
 [![Red Bull Content Pool](/assets/pages/home/rbcp.jpg)](https://www.redbullcontentpool.com)
 
 The Red Bull Content Pool is the global B2B self-service media & news platform
-for press, journalists and business partners. The content portfolio ranges from
+for press, journalists, and business partners. The content portfolio ranges from
 high-quality photos to HD videos about the latest news & stories relating to
 sports, culture & lifestyle.
 
@@ -131,7 +128,7 @@ Extracurricular activity:
 * Frontend Development 2
 * Web Operations
 * Web Production Workflows
-* Bachelor Thesis: Topic Selection, Exposé, Accompanying Course and Mentoring
+* Bachelor Thesis: Topic Selection, Exposé, Accompanying Course, and Mentoring
 * Multimedia Project & Studio
 
 ##### Past
@@ -171,7 +168,7 @@ customers, the pet owners. Our customers can search for pet sitters in their
 neighborhood independently, book an add-on package (additional insurance,
 pick-up service) and pay directly on the platform.
 
-Uncomplicated, quick and all in one place.
+Uncomplicated, quick, and all in one place.
 
 [![cnuddl – pet sitting platform](/assets/pages/home/cnuddl.jpg)](/assets/pages/home/cnuddl-full.jpg)
 
@@ -192,7 +189,7 @@ company with a focus on online entertainment solutions.
 My responsibilities included the concept, development and maintenance of two
 large-scale websites, an asset management system and various system-critical
 infrastructure. I was hired as a full stack developer but took over the lead
-developer position in my second year. In the following years, I hired, built up
+developer position in my second year. In the following years, I hired, built up,
 and led a team of three developers.
 
 #### Technology & Services
