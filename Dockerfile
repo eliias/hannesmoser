@@ -26,7 +26,7 @@ RUN bundle exec jekyll build
 FROM nginx:1-alpine
 
 RUN mkdir -p /app
-COPY CHECKS /app/CHECKS
+COPY app.json /app/app.json
 
 WORKDIR /usr/share/nginx/html
 COPY --from=builder /app/_site .
