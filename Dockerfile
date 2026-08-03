@@ -1,12 +1,12 @@
-FROM ruby:3.3.4 AS builder
+FROM ruby:4.0.6 AS builder
 
 WORKDIR /app
 
 # Install Node.js and pnpm
 RUN apt-get update && apt-get install -y curl gnupg \
-  && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+  && curl -fsSL https://deb.nodesource.com/setup_26.x | bash - \
   && apt-get install -y nodejs \
-  && npm install -g pnpm \
+  && npm install -g pnpm@11 \
   && rm -rf /var/lib/apt/lists/*
 
 COPY Gemfile ./
@@ -16,6 +16,7 @@ RUN bundle install
 
 COPY package.json ./
 COPY pnpm-lock.yaml ./
+COPY pnpm-workspace.yaml ./
 
 RUN pnpm install
 

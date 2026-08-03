@@ -1,0 +1,7 @@
+allowBuilds:
+  core-js: false
+  esbuild: false
+# for pnpm 10, same decision as allowBuilds above
+ignoredBuiltDependencies:
+  - core-js
+  - esbuild
