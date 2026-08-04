@@ -12,7 +12,7 @@ import type { CSSProperties, ReactNode } from 'react'
 type ButtonVariant = 'primary' | 'secondary' | 'tertiary'
 
 const BUTTON_BASE =
-  'inline-flex items-center border-[var(--hair)] border-ink px-4 py-2 font-mono text-xs tracking-[.06em] uppercase cursor-pointer'
+  'inline-flex items-center rounded-full border-[var(--hair)] border-ink px-4 py-2 font-mono text-xs tracking-[.06em] uppercase cursor-pointer'
 
 // Tertiary is the one shape whose border needs its own alpha (ink at --o-3)
 // independent of the box opacity (--o-2) sitting on top of it — matching

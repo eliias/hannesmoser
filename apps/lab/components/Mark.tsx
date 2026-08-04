@@ -34,7 +34,7 @@ export default function Mark({ size, wordmark = true }: MarkProps) {
       </svg>
       {showWordmark && (
         <span className="font-grotesk text-sm font-medium tracking-[-0.01em] text-ink">
-          lab.hannesmoser.at
+          lab.
         </span>
       )}
     </Link>

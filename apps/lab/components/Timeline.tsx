@@ -274,13 +274,13 @@ export default function Timeline({ experiments, active, onSelect }: TimelineProp
       onKeyDown={onKeyDown}
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
-      className="relative select-none border-t-[var(--hair)] border-ink bg-paper py-4 [touch-action:pan-y]"
+      className="relative select-none border-t-[var(--hair)] border-ink bg-paper pt-4 [touch-action:pan-y]"
     >
       <div
         ref={(el) => {
           view.current.rail = el
         }}
-        className="relative mx-6 h-[var(--rail-h)] overflow-hidden"
+        className="relative h-[var(--rail-h)] overflow-hidden"
       >
         {experiments.map((e, i) => (
           <button
@@ -296,10 +296,13 @@ export default function Timeline({ experiments, active, onSelect }: TimelineProp
             // from the index alone. They lay the row out for the static export
             // and for the first paint; the loop then owns the geometry.
             style={{ left: `calc(100% * ${i} / ${n})`, width: `calc(100% / ${n})` }}
-            className="absolute top-0 flex h-full cursor-pointer flex-col justify-center gap-1 overflow-hidden border-0 bg-transparent px-4 py-2 text-left will-change-[transform,width]"
+            className="absolute top-0 flex h-full cursor-pointer flex-col justify-center gap-1 overflow-hidden border-0 bg-transparent px-4 pt-3 pb-4 text-left will-change-[transform,width]"
           >
             <span
-              className={`absolute top-0 left-0 h-[var(--rule-active)] w-[calc(100%-var(--s-4))] bg-current transition-opacity duration-[var(--dur-2)] ease-out ${
+              // bg-ink, not bg-current: the rule keeps the ink while the rest
+              // of the item inverts to paper on reveal. It reads as part of the
+              // rail rather than as a mark that flips with the fill.
+              className={`absolute top-0 left-0 h-[var(--rule-active)] w-[calc(100%-var(--s-4))] bg-ink transition-opacity duration-[var(--dur-2)] ease-out ${
                 i === active ? 'opacity-100' : 'opacity-0'
               }`}
             />

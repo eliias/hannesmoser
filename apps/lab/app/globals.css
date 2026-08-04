@@ -34,7 +34,19 @@
   /* structure */
   --hair: 1px;
   /* navigation height is DERIVED from the type it holds, never picked */
-  --rail-h: calc(var(--t-xs) * 1.2 + var(--t-md) * 1.35 + var(--t-xs) * 1.5 + var(--s-2) * 2);
+  /* Everything one item stacks: three type lines, the two flex gaps between
+     them, and its own vertical padding. The padding is deliberately
+     asymmetric, --s-3 above the number and --s-4 below the date, so the row
+     sits off the bottom edge now that the nav has no bottom padding.
+
+     Keep the last three terms in step with Timeline's `gap-1 pt-3 pb-4`. The
+     item is `overflow: hidden`, so if this total comes up short the type is
+     silently clipped rather than pushing the rail taller. The gap term was
+     missing until the padding changed and made the shortfall visible. */
+  --rail-h: calc(
+    var(--t-xs) * 1.2 + var(--t-md) * 1.35 + var(--t-xs) * 1.5 + var(--s-1) * 2 + var(--s-3) +
+      var(--s-4)
+  );
   --nav-h: calc(var(--rail-h) + var(--s-4) * 2 + var(--hair));
 
   /* motion */
@@ -46,10 +58,19 @@
 
   /* --- tokens the delivered tokens.css left out (inventory §7) --- */
 
-  /* the fisheye reveal spring, Lab.dc.html:456, genuinely different from
-     --spring-k / --spring-d above, not a duplicate */
-  --spring-k-reveal: .14;
-  --spring-d-reveal: .72;
+  /* The fisheye reveal, which drives the item's ink fill, its type colour and
+     the abstract and date opacities. Damping is 0 on purpose: the integrator
+     is `v = v * d + (target - x) * k`, so with no momentum term it collapses
+     to `x += (target - x) * k`, a pure exponential ease-out that approaches
+     the target and never passes it. The prototype used .72 here
+     (Lab.dc.html:456), which overshoots, and on a colour that reads as a
+     pulse rather than a fade. Position and width keep their overshoot in
+     --spring-d above; only the colour lost it.
+
+     k .2 settles to ~96% in 14 frames, about 230ms, which lines up with the
+     --dur-2 transitions used for the same kind of reveal elsewhere. */
+  --spring-k-reveal: .2;
+  --spring-d-reveal: 0;
 
   --rule-active: 2px;   /* the active nav item's bar; not on the space scale */
 
