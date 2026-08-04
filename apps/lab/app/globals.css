@@ -1,4 +1,124 @@
 @import "tailwindcss";
 
-/* Design tokens live in tokens/, as CSS custom properties mirrored into
-   the Tailwind theme. See docs/lab/design-brief.md, section "Delivery". */
+/* Design tokens live here, as CSS custom properties mirrored into the
+   Tailwind theme below. Source: design_handoff_lab/lab-prototype/tokens/tokens.css.
+   See docs/lab/design-brief.md and docs/lab/prototype-README.md. */
+:root {
+  /* ink & paper: one ink, one paper, greys are opacity of the ink.
+     The rgb values themselves live only in lib/ink.ts; this custom
+     property is the one place CSS reads them from. */
+  --paper: #f4f4f2;
+  --ink: #111110;
+  --o-1: 1;    /* primary detail */
+  --o-2: .55;  /* secondary text, labels */
+  --o-3: .32;  /* metadata, hairlines on ink */
+  --o-4: .12;  /* rules, dividers, dither */
+
+  /* type. The delivered tokens.css names the CDN families ("Schibsted
+     Grotesk", "JetBrains Mono"); self-hosting via fontsource registers
+     them under the "Variable" suffix instead, so these two values differ
+     from the handoff on purpose. */
+  --grotesk: "Schibsted Grotesk Variable", system-ui, sans-serif;
+  --mono: "JetBrains Mono Variable", ui-monospace, monospace;
+  --t-xs: 11px;   /* mono labels, numbers, dates */
+  --t-sm: 13px;   /* wordmark, small copy */
+  --t-md: 17px;   /* body, nav titles */
+  --t-lg: 22px;   /* lede, link box */
+  --t-xl: clamp(30px, 3.6vw, 52px);  /* live experiment title */
+  --t-2xl: clamp(40px, 5.4vw, 76px); /* case study title */
+
+  /* space: 4px base */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 72px;
+
+  /* structure */
+  --hair: 1px;
+  /* navigation height is DERIVED from the type it holds, never picked */
+  --rail-h: calc(var(--t-xs) * 1.2 + var(--t-md) * 1.35 + var(--t-xs) * 1.5 + var(--s-2) * 2);
+  --nav-h: calc(var(--rail-h) + var(--s-4) * 2 + var(--hair));
+
+  /* motion */
+  --dur-1: 120ms; --dur-2: 260ms;
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  /* springs are integrated in JS; these are the only two knobs per variant */
+  --spring-k: .20;      /* stiffness */
+  --spring-d: .68;      /* damping (lower = more overshoot) */
+
+  /* --- tokens the delivered tokens.css left out (inventory §7) --- */
+
+  /* the fisheye reveal spring, Lab.dc.html:456, genuinely different from
+     --spring-k / --spring-d above, not a duplicate */
+  --spring-k-reveal: .14;
+  --spring-d-reveal: .72;
+
+  --rule-active: 2px;   /* the active nav item's bar; not on the space scale */
+
+  --slider-w-lg: 120px; /* GRAVITY slider */
+  --slider-w-sm: 88px;  /* GRAIN slider */
+  --slider-track: 2px;  /* slider height */
+
+  --toggle-w: 26px;     /* toggle track */
+  --toggle-h: 14px;     /* toggle track */
+  --toggle-block: 10px; /* toggle inner block */
+  --toggle-travel: 13px; /* inner block translate end (start is 1px) */
+
+  --mark-sm: 22px; /* mark on the rail */
+  --mark-lg: 52px; /* project mark in a case study */
+}
+
+/* Tailwind 4 has no tailwind.config.ts: this block is the designer's
+   theme.ts, mapped into Tailwind's theme namespaces instead. */
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+
+  --font-grotesk: var(--grotesk);
+  --font-mono: var(--mono);
+
+  --text-xs: var(--t-xs);
+  --text-sm: var(--t-sm);
+  --text-md: var(--t-md);
+  --text-lg: var(--t-lg);
+  --text-xl: var(--t-xl);
+  --text-2xl: var(--t-2xl);
+
+  --spacing-1: var(--s-1);
+  --spacing-2: var(--s-2);
+  --spacing-3: var(--s-3);
+  --spacing-4: var(--s-4);
+  --spacing-5: var(--s-5);
+  --spacing-6: var(--s-6);
+  --spacing-7: var(--s-7);
+  --spacing-8: var(--s-8);
+
+  /* Tailwind has no utility namespace for named durations; --dur-1 and
+     --dur-2 above stay plain custom properties, read with
+     transition-duration: var(--dur-1). --ease-out has a real namespace,
+     so it replaces Tailwind's built-in ease-out curve. */
+  --ease-out: var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 1ms !important; }
+}
+
+/* The shell (components/Shell.tsx) is the one screen and it never scrolls.
+   overflow: hidden must sit on html and body, not only on a wrapper div,
+   or a child that overflows its box can still open a page scrollbar.
+
+   The tokens above are useless unless something applies them at the root:
+   this rule is that one place. Without it, Tailwind's preflight sets the
+   system font stack on html and the UA default black on body, and every
+   --o-2 / --o-3 opacity composes against black instead of --ink. */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  color-scheme: light;
+  font-family: var(--grotesk);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+}
