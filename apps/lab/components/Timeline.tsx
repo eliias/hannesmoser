@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from 'react'
 import type { PointerEvent as ReactPointerEvent, KeyboardEvent as ReactKeyboardEvent } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import type { Experiment } from '@/content/experiments'
 import { inkRgba } from '@/lib/ink'
 import { step, type Spring } from '@/lib/spring'
@@ -24,7 +26,7 @@ const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v))
 
 /** The three elements the loop writes to, per item. */
 type ItemEls = {
-  el: HTMLButtonElement | null
+  el: HTMLAnchorElement | null
   date: HTMLSpanElement | null
   abs: HTMLSpanElement | null
 }
@@ -154,11 +156,12 @@ function frameBody(v: View) {
 interface TimelineProps {
   /** Oldest to newest. The row renders in this order, left to right. */
   experiments: Experiment[]
+  /** Derived from the URL by LabShell, not held as state anywhere. */
   active: number
-  onSelect: (i: number) => void
 }
 
-export default function Timeline({ experiments, active, onSelect }: TimelineProps) {
+export default function Timeline({ experiments, active }: TimelineProps) {
+  const router = useRouter()
   const view = useRef<View>({
     rail: null,
     items: [],
@@ -224,9 +227,13 @@ export default function Timeline({ experiments, active, onSelect }: TimelineProp
 
   const slot = (i: number) => (view.current.items[i] ??= { el: null, date: null, abs: null })
 
-  const setActive = (i: number) => {
+  // Arrow keys walk the row. `replace`, not `push`, so arrowing across twenty
+  // experiments does not leave twenty entries to press Back through. A click
+  // or Enter is a deliberate choice and does push.
+  const arrowTo = (i: number) => {
     const idx = clamp(i, 0, n - 1)
-    onSelect(idx)
+    if (idx === active) return
+    router.replace(`/${experiments[idx].slug}/`)
     const el = view.current.items[idx]?.el
     if (el && document.activeElement !== el) el.focus({ preventScroll: true })
   }
@@ -244,24 +251,10 @@ export default function Timeline({ experiments, active, onSelect }: TimelineProp
   const onKeyDown = (e: ReactKeyboardEvent<HTMLElement>) => {
     if (e.key === 'ArrowRight') {
       e.preventDefault()
-      setActive(active + 1)
+      arrowTo(active + 1)
     } else if (e.key === 'ArrowLeft') {
       e.preventDefault()
-      setActive(active - 1)
-    }
-  }
-
-  // Enter/Space live on the item button, not the nav, and act on that
-  // button's own index. The nav-level handler used to act on `active`, which
-  // is the wrong item once Tab has moved focus away from it. Live
-  // experiments have no link, so this is a no-op and native activation
-  // (the button's own click) selects the focused item instead.
-  const onItemKeyDown = (i: number) => (e: ReactKeyboardEvent<HTMLButtonElement>) => {
-    if (e.key !== 'Enter' && e.key !== ' ') return
-    const link = experiments[i]?.link
-    if (link) {
-      e.preventDefault()
-      window.open(link, '_blank', 'noreferrer')
+      arrowTo(active - 1)
     }
   }
 
@@ -283,15 +276,13 @@ export default function Timeline({ experiments, active, onSelect }: TimelineProp
         className="relative h-[var(--rail-h)] overflow-hidden"
       >
         {experiments.map((e, i) => (
-          <button
-            key={e.number}
-            type="button"
+          <Link
+            key={e.slug}
+            href={`/${e.slug}/`}
             ref={(el) => {
               slot(i).el = el
             }}
-            onClick={() => setActive(i)}
-            onKeyDown={onItemKeyDown(i)}
-            aria-current={i === active ? 'true' : undefined}
+            aria-current={i === active ? 'page' : undefined}
             // The only styles JSX ever sets on an item, and both are derived
             // from the index alone. They lay the row out for the static export
             // and for the first paint; the loop then owns the geometry.
@@ -338,7 +329,7 @@ export default function Timeline({ experiments, active, onSelect }: TimelineProp
                 {e.abstract}
               </span>
             </span>
-          </button>
+          </Link>
         ))}
       </div>
     </nav>
