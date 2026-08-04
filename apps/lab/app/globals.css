@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+/* Design tokens live in tokens/, as CSS custom properties mirrored into
+   the Tailwind theme. See docs/lab/design-brief.md, section "Delivery". */

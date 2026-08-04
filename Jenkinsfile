@@ -10,13 +10,18 @@ pipeline {
       steps {
         script {
           env.BUILD_TAG = env.BRANCH_NAME.toString().hashCode()
+          env.SITE_CHANGED = siteChanged().toString()
+          echo "site changed: ${env.SITE_CHANGED}"
         }
       }
     }
 
     stage("Build & Deploy") {
       when {
-        branch 'main'
+        allOf {
+          branch 'main'
+          expression { env.SITE_CHANGED == "true" }
+        }
       }
 
       steps {
@@ -43,4 +48,19 @@ pipeline {
       }
     }
   }
+}
+
+// Every path touched by every commit in this build.
+// Empty when Jenkins cannot tell: first build of a branch, manual run, replay.
+def changedPaths() {
+  return currentBuild.changeSets.collectMany { set ->
+    set.items.collectMany { commit -> commit.affectedPaths }
+  }
+}
+
+// A new apps/<name>/ needs its own Jenkinsfile and its own job. Nothing here deploys it.
+// Deploy the site when anything outside apps/ changed, or when we cannot tell.
+def siteChanged() {
+  def paths = changedPaths()
+  return paths.isEmpty() || paths.any { !it.startsWith("apps/") }
 }

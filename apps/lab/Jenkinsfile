@@ -1,0 +1,62 @@
+pipeline {
+  agent any
+
+  options {
+    disableConcurrentBuilds()
+  }
+
+  stages {
+    stage("Environment") {
+      steps {
+        script {
+          env.BUILD_TAG = env.BRANCH_NAME.toString().hashCode()
+          env.LAB_CHANGED = labChanged().toString()
+          echo "lab changed: ${env.LAB_CHANGED}"
+        }
+      }
+    }
+
+    stage("Build & Deploy") {
+      when {
+        allOf {
+          branch 'main'
+          expression { env.LAB_CHANGED == "true" }
+        }
+      }
+
+      steps {
+        sh label: 'container', script: ''' #!/usr/bin/env bash
+        # build and tag release artifact
+        sudo docker build \
+          -t lab:$BUILD_NUMBER \
+          -t lab:latest \
+          -t registry.conc.at/lab:$BUILD_NUMBER \
+          -t registry.conc.at/lab:latest \
+          apps/lab
+
+        sudo docker push registry.conc.at/lab:$BUILD_NUMBER
+        sudo docker push registry.conc.at/lab:latest
+        '''
+
+        sh label: 'deploy', script: ''' #!/usr/bin/env bash
+        # deploy
+        ssh dokku@projects.conc.at "git:from-image lab registry.conc.at/lab:$BUILD_NUMBER"
+        '''
+      }
+    }
+  }
+}
+
+// Every path touched by every commit in this build.
+// Empty when Jenkins cannot tell: first build of a branch, manual run, replay.
+def changedPaths() {
+  return currentBuild.changeSets.collectMany { set ->
+    set.items.collectMany { commit -> commit.affectedPaths }
+  }
+}
+
+// Deploy the lab when the lab changed, or when we cannot tell what changed.
+def labChanged() {
+  def paths = changedPaths()
+  return paths.isEmpty() || paths.any { it.startsWith("apps/lab/") }
+}

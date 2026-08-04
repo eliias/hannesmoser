@@ -1,0 +1,24 @@
+{
+  "name": "lab",
+  "description": "Experiments by Hannes Moser",
+  "keywords": [
+    "hannesmoser",
+    "lab"
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "healthchecks": {
+    "web": [
+      {
+        "type": "startup",
+        "name": "web check",
+        "description": "Checking if the web app responds to the / endpoint.",
+        "path": "/",
+        "attempts": 5
+      }
+    ]
+  }
+}

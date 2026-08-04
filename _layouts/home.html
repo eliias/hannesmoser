@@ -33,14 +33,7 @@
 
 <div id="top-navigation" class="opacity-0 fixed top-4 w-full transition-all duration-200 scale-90 ease-[cubic-bezier(.73,.7,.57,1.76)]">
   <div class="bg-white rounded-xl container mx-auto shadow-lg shadow-gray-100/1 ring-1 ring-gray-100">
-    <nav class="flex items-center justify-between p-4 top-0 animated bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 gap-6">
-      <a href={{"/" | prepend: site.baseurl }}><span class="text-lg font-medium text-black justify-self-start mr-10">Hannes Moser</span></a>
-<!--      <a class="text-lg font-medium" href={{"/blog/" | prepend: site.baseurl }}>Blog</a>-->
-      <a class="text-lg font-medium" href={{"/projects/" | prepend: site.baseurl }}>Projects</a>
-      <a class="text-lg font-medium" href={{"/lectures/" | prepend: site.baseurl }}>Lectures</a>
-      <a class="text-lg font-medium" href={{"/community/" | prepend: site.baseurl }}>Community</a>
-      <a class="text-lg font-medium" href={{"/contact/" | prepend: site.baseurl }}>Contact</a>
-    </nav>
+    {% include navigation-top.html %}
   </div>
 </div>
 
