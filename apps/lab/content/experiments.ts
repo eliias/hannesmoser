@@ -1,4 +1,4 @@
-// The three experiments, oldest to newest. This is the order the timeline
+// The experiments, oldest to newest. This is the order the timeline
 // renders left to right; the newest entry (highest index) is the one that
 // loads first.
 //
@@ -52,6 +52,15 @@ export const experiments: Experiment[] = [
     kind: 'live',
     abstract: 'Particles, gravity, pulse waves',
     lede: 'Drop an image, push it with the pointer, let it fall apart into a cloud, then fire a pulse through it.',
+  },
+  {
+    slug: 'navier-stokes',
+    number: '04',
+    date: '2026-08-24',
+    title: 'Navier-Stokes',
+    kind: 'live',
+    abstract: 'Water, solved on a grid',
+    lede: 'A few thousand particles carry the water. A grid takes the divergence out of them every frame. Swipe through the pool and throw it at the ceiling.',
   },
 ]
 
