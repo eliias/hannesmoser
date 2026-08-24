@@ -144,7 +144,7 @@ Build against these three. Two are real and shipping, one is new.
 
 | #  | Title          | Kind       | Link                     |
 |----|----------------|------------|--------------------------|
-| 01 | Postindex      | case study | postindex.hannesmoser.at |
+| 01 | Postindex      | case study | postindex.linear.dev     |
 | 02 | Robovac        | case study | robovac.hannesmoser.at   |
 | 03 | Image dissolve | live       | none                     |
 

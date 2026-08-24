@@ -42,7 +42,7 @@ export const experiments: Experiment[] = [
     kind: 'case-study',
     abstract: 'A filter engine inside the browser tab',
     lede: 'A filter engine that runs in the browser tab. Rust on wasm32, posting lists as roaring containers, immutable segments over a virtual filesystem on OPFS.',
-    link: 'https://postindex.hannesmoser.at',
+    link: 'https://postindex.linear.dev',
   },
   {
     slug: 'image-dissolve',
