@@ -7,6 +7,10 @@ description: Use when adding an experiment to apps/lab, wiring one into the time
 
 ## Overview
 
+**Every path and command below is relative to `apps/lab/`**, which is a
+separate app with its own `package.json`. Run the commands there, not at the
+repo root.
+
 The lab is a static Next export. An experiment is one registry entry plus one
 component that renders its own container. The simulation itself belongs in
 `lib/`, free of the DOM, so you can run and measure it without a browser.
