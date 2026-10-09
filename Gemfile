@@ -4,7 +4,7 @@ source "https://rubygems.org"
 ruby "4.0.6"
 
 gem "jekyll", "~> 4.4.1"
-gem "jekyll-feed", "~> 0.12"
+gem "jekyll-feed", "~> 0.18"
 gem "jekyll-paginate", "~> 1.1"
 gem "jekyll-vite"
 gem "redcarpet", "~> 3.6.0"
